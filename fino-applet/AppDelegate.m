@@ -1,11 +1,3 @@
-//
-//  AppDelegate.m
-//  MyApplet
-//
-//  Created by 杨涛 on 2020/2/13.
-//  Copyright © 2020 finogeeks. All rights reserved.
-//
-
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import <FinApplet/FinApplet.h>
@@ -18,8 +10,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
+    // 应用程序启动后自定义的覆盖点
     NSString *appKey = @"22LyZEib0gLTQdU3MUauAR1TgQsjmhH3rHM7vRrbY6UA";
     FATConfig *config = [FATConfig configWithAppSecret:@"9628ad1684944587" appKey:appKey];
     config.apiServer = @"https://mp.finogeeks.com";
@@ -27,6 +18,7 @@
     
     [[FATClient sharedClient] initWithConfig:config error:nil];
     
+    // 此时在self.window上挂载自定义的nav等属性
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init] ];

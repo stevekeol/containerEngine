@@ -1,11 +1,3 @@
-//
-//  AppletViewController.m
-//  MyApplet
-//
-//  Created by 杨涛 on 2020/2/13.
-//  Copyright © 2020 finogeeks. All rights reserved.
-//
-
 #import "AppletViewController.h"
 #import <WebKit/WebKit.h>
 
@@ -58,6 +50,7 @@
     self.webView.allowsBackForwardNavigationGestures = YES;
     
     [self.view addSubview:self.webView];
+    // 此处加载并打开view.html
     NSString *urlStr = [[NSBundle mainBundle] pathForResource:@"view.html" ofType:nil];
     NSURL *fileURL = [NSURL fileURLWithPath:urlStr];
     [self.webView loadFileURL:fileURL allowingReadAccessToURL:fileURL];

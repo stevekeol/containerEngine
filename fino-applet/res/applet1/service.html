@@ -139,8 +139,7 @@
     var subscribeHandler = function (eventName, data, webviewId, reportParams) {
       // 执行注册的回调
       // reportLog('subscribeHandler:'+eventName,data,[webviewId||''],'app2view_get')
-      var handler
-      handler = eventName.indexOf(eventPrefix) != -1 ? handlers[eventName] : defaultEventHandlers[eventName]
+      var handler = eventName.indexOf(eventPrefix) != -1 ? handlers[eventName] : defaultEventHandlers[eventName]
       if (typeof handler === 'function') {
         handler(data, webviewId, reportParams)
       }

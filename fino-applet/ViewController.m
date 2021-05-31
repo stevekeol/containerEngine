@@ -1,13 +1,5 @@
-//
-//  ViewController.m
-//  MyApplet
-//
-//  Created by 杨涛 on 2020/2/13.
-//  Copyright © 2020 finogeeks. All rights reserved.
-//
-
 #import "ViewController.h" // 
-#import "AppletService.h"
+#import "AppletService.h" // 该文件在./applet/AppletService.h
 #import <WebKit/WebKit.h>
 #import <FinApplet/FinApplet.h>
 
@@ -83,6 +75,7 @@
 }
 - (void)onTestClick:(id)sender {
     self.service = [[AppletService alloc] init];
+    // startApplet方法定义在: ./applet/AppletService.m中
     [self.service startApplet:self.navigationController];
 }
 
